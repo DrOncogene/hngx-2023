@@ -5,7 +5,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-@app.get('/api')
+@app.get('/api', strict_slashes=False)
 def index() -> dict:
     """
     returns a JSON response with the details passed
