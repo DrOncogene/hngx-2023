@@ -15,7 +15,7 @@ def index() -> dict:
 
     return {
         "slack_name": slack_name,
-        "utc_time": f'{datetime.utcnow().isoformat()}Z',
+        "utc_time": f'{datetime.utcnow().isoformat(timespec="seconds")}Z',
         "current_day": datetime.now().strftime("%A"),
         "track": track,
         "github_file_url": "https://github.com/DrOncogene/hngx-2023/blob/main/stage_one/main.py",
