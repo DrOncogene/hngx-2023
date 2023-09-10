@@ -19,7 +19,6 @@
       place-items: center;
     }
     .card {
-      /* width: fit-content; */
       min-width: max-content;
       border-radius: 10px;
       background-color: #3e3e42;
@@ -42,6 +41,14 @@
       height: 250px;
       width: 250px;
     }
+    .card a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -52,7 +59,7 @@
       <p class="week-day" data-testid="currentDayOfTheWeek"></p>
       <p class="utc-time" data-testid="currentUTCTime"></p>
       <p class="track" data-testid="myTrack">Frontend</p>
-      <p class="github-url" data-testid="githubURL"></p>
+      <a href="https://github.com/DrOncogene/hngx-2023/blob/main/frontend/stage_one/index.html" data-testid="githubURL">Github Link</a>
     </div>
   </div>
   <script>
