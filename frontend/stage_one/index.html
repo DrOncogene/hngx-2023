@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HNGX Stage One</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+      background-color: #f2f2f2;
+      display: grid;
+      place-items: center;
+    }
+    .card {
+      /* width: fit-content; */
+      min-width: max-content;
+      border-radius: 10px;
+      background-color: #3e3e42;
+      border-radius: 10px;
+      color: #fff;
+      display: grid;
+      grid-auto-flow: row;
+      place-items: center;
+      place-content: center;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+    .card-body {
+      background-color: #007acc;
+      width: 100%;
+      padding: 10px;
+    }
+    .card-img {
+      height: 250px;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="nas.jpg" alt="Nas" class="card-img" data-testid="slackDisplayImage" />
+    <div class="card-body">
+      <h2 data-testid="slackUserName" class="card-header">Nas</h2>
+      <p class="week-day" data-testid="currentDayOfTheWeek"></p>
+      <p class="utc-time" data-testid="currentUTCTime"></p>
+      <p class="track" data-testid="myTrack">Frontend</p>
+      <p class="github-url" data-testid="githubURL"></p>
+    </div>
+  </div>
+  <script>
+    const utcTime = document.querySelector('.utc-time');
+    const weekDay = document.querySelector('.week-day');
+
+    utcTime.textContent = new Date().getTime();
+    weekDay.textContent = new Date().toLocaleString('en-us', { weekday: 'long' });
+  </script>
+</body>
+</html>
