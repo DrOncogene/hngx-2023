@@ -67,6 +67,9 @@
     const weekDay = document.querySelector('.week-day');
 
     utcTime.textContent = new Date().getTime();
+    setInterval(() => {
+      utcTime.textContent = new Date().getTime();
+    }, 1000);
     weekDay.textContent = new Date().toLocaleString('en-us', { weekday: 'long' });
   </script>
 </body>
