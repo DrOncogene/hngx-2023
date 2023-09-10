@@ -18,8 +18,8 @@ def index() -> dict:
         "utc_time": datetime.utcnow().isoformat(),
         "current_day": datetime.now().strftime("%A"),
         "track": track,
-        "github_file_url": "",
-        "github_repo_url": "",
+        "github_file_url": "https://github.com/DrOncogene/hngx-2023/blob/main/stage_one/main.py",
+        "github_repo_url": "https://github.com/DrOncogene/hngx-2023",
         "status_code": 200
     }
 
