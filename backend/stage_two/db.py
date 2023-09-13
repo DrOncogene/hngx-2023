@@ -47,7 +47,8 @@ class DB:
 
     def get_by_email(self, email: str) -> Person:
         """get a person from the db by email"""
-        return self.__session.query(Person).filter(Person.email == email).first()
+        return self.__session.query(Person).filter(
+            Person.email == email).first()
 
     def save(self):
         """save db"""

@@ -35,6 +35,18 @@ def create_person_fixture(request):
     client.delete(f'/api/{person.get("id")}')
 
 
+@pytest.fixture(scope='module', autouse=True)
+def delete_db():
+    """delete test db"""
+
+    yield
+
+    try:
+        os.remove('./test_db.sqlite3')
+    except FileNotFoundError:
+        pass
+
+
 class TestCreate:
     """test create person"""
 
@@ -208,8 +220,3 @@ class TestDelete:
 
 if __name__ == "__main__":
     pytest.main(["-s", __file__])
-
-    try:
-        os.remove('./test_db.sqlite3')
-    except FileNotFoundError:
-        pass
