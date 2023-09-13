@@ -121,7 +121,7 @@ Content: {
 - cd into the backend/stage_two directory (root of the project)
 - Run `pipenv install` to install dependencies
 - Run `pipenv shell` to activate the virtual environment
-- Run `uvicorn api.main:app` to start the application server
+- Run `uvicorn api.main:app` or `python3 wsgi.py` to start the application server
 - The application server will be running on http://localhost:8000
 
 ## TESTING
