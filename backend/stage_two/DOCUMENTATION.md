@@ -26,7 +26,7 @@ Person object:
 
 ## UML DIAGRAM
 
-Visit [this board](https://miro.com/app/board/o9J_lQqZJZ0=/) to view the ER diagrams
+Visit [this board](https://whimsical.com/backend-stage-two-YKnMJ3abo4SDbZBymwj5PB) to view the UML diagrams
 
 ## ENDPOINTS
 
@@ -64,6 +64,57 @@ Visit [this board](https://miro.com/app/board/o9J_lQqZJZ0=/) to view the ER diag
 - 200: successful deletion
 - 404: person does not exist
 
+## SAMPLE USAGE
+
+```
+Request: POST /api HTTP/1.1 application/json
+Body: {
+        "name": "John Doe",
+        "email": "doe@mail.com"
+      }
+
+Response: Status 201
+Content: {
+            "id": "5fhgdf7dryeyr7ey77hdjfbjdfjdf", # will vary
+            "name": "John Doe",
+            "email": "doe@mail.com"
+        }
+```
+
+```
+Request: GET /api/5fhgdf7dryeyr7ey77hdjfbjdfjdf HTTP/1.1
+
+Response: Status 200
+Content: {
+            "id": "5fhgdf7dryeyr7ey77hdjfbjdfjdf", # will vary
+            "name": "John Doe",
+            "email": "doe@mail.com"
+        }
+```
+
+```
+Request: PUT /api/5fhgdf7dryeyr7ey77hdjfbjdfjdf HTTP/1.1 application/json
+Body: {
+        "name": "Jane Doe",
+    }
+
+Response: Status 200
+Content: {
+            "id": "5fhgdf7dryeyr7ey77hdjfbjdfjdf", # will vary
+            "name": "Jane Doe",
+            "email": "doe@mail.com"
+        }
+```
+
+```
+Request: DELETE /api/5fhgdf7dryeyr7ey77hdjfbjdfjdf HTTP/1.1
+
+Response: Status 200
+Content: {
+        "detail": "Person deleted successfully"
+    }
+```
+
 ## SETUP
 
 - Clone the repository
@@ -79,5 +130,9 @@ Visit [this board](https://miro.com/app/board/o9J_lQqZJZ0=/) to view the ER diag
 - Set `MODE` environment variable to `test`
 - Run `pytest test.py` or `python3 test.py` to run the tests
 - Alternatively, run `MODE=test pytest test.py` or `MODE=test python3 test.py` to run the tests in one step without setting the environment variable separately
+
+## AUTO DOCUMENTATION
+
+Check [here](http://person-api.droncogene.com/redoc)
 
 ENJOY!
