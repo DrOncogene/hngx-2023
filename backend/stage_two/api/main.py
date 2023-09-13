@@ -4,7 +4,6 @@ from fastapi import FastAPI
 
 from db import DB
 from api.models import PersonIn, PersonOut, Person
-from api import db
 
 
 app = FastAPI()
