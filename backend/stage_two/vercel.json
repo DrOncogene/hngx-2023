@@ -1,12 +1,9 @@
 {
     "version": 2,
     "builds": [
-      { "src": "wsgi.py", "use": "@vercel/python" }
+      { "src": "wsgi.py", "use": "@now/python" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "wsgi" }
-    ],
-    "env": {
-      "APP_MODULE": "wsgi:app"
-    }
+      { "src": "/(.*)", "dest": "api/main.py" }
+    ]
 }
