@@ -58,10 +58,13 @@ def update_person(person_id: str, data: dict) -> PersonOut:
     if data.get("id"):
         del data["id"]
 
-    person.__dict__.update(data)
+    for key, value in data.items():
+        setattr(person, key, value)
+
     try:
         db.save()
     except Exception as err:
+        print(err)
         raise HTTPException(
             status_code=400, detail="Email or name already exists")
 
